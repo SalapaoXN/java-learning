@@ -2,42 +2,62 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner inputScanner = new Scanner(System.in);
 
-        // Exercise 3 — User Profile
-        System.out.print("Enter your name: ");
-        String name = scanner.nextLine();
+        // Exercise 6 — Even / Odd
+        System.out.print("Enter number: ");
+        int num = Integer.parseInt(inputScanner.nextLine());
 
-        System.out.print("Enter your age: ");
-        int age = Integer.parseInt(scanner.nextLine());
+        if (num%2 == 0) {
+            System.out.println("Even");
+        } else {
+            System.out.println("Odd");
+        }
 
-        System.out.print("Enter your university: ");
-        String university = scanner.nextLine();
+        System.out.println("----------------------");
 
-        System.out.print("Enter your study year: ");
-        int year = Integer.parseInt(scanner.nextLine());
+        // Exercise 7 — Grade Calculator
+        System.out.print("Enter score: ");
+        int score = Integer.parseInt(inputScanner.nextLine());
+        if (score > 100 || score < 0)  {
+            System.out.println("Invalid score");
+        } else {
+            if (score >= 80) {
+                System.out.println("Grade A");
+            } else if (score >= 70) {
+                System.out.println("Grade B");
+            } else if (score >= 60) {
+                System.out.println("Grade C");
+            } else if (score >= 50) {
+                System.out.println("Grade D");
+            } else {
+                System.out.println("Grade F");
+            }
+        }
 
-        System.out.println("Name: " + name);
-        System.out.println("Age: " + age + " years old.");
-        System.out.println("University: " + university);
-        System.out.println("Year: " + year);
+        System.out.println("----------------------");
 
-        System.out.println("--------------------------------");
+        // Exercise 8 — Discount Calculator
+        System.out.print("Purchase amount: ");
+        int buy = Integer.parseInt(inputScanner.nextLine());
 
-        // Exercise 4 — Age Calculator
-        System.out.println("Next year you will be " + (age+1) +  " years old.");
+        if (buy >= 3000) {
+            double discount = (buy * 0.15);
+            System.out.println("Final price: " + (buy - discount));
+        } else if (buy >= 1500) {
+            double discount = (buy * 0.10);
+            System.out.println("Discount: " + discount);
+            System.out.println("Final price: " + (buy - discount));
+        } else if (buy >= 500) {
+            double discount = (buy * 0.05);
+            System.out.println("Discount: " + discount);
+            System.out.println("Final price: " + (buy - discount));
+        } else {
+            double discount = (buy * 0);
+            System.out.println("Discount: " + discount);
+            System.out.println("Final price: " + (buy - discount));
+        }
 
-        System.out.println("--------------------------------");
-
-        // Exercise 5 — Rectangle Calculator
-        System.out.print("Width: ");
-        int width = scanner.nextInt();
-
-        System.out.print("Height: ");
-        int height = scanner.nextInt();
-
-        System.out.println("Area : " + width * height);
-        System.out.println("Area : " + (2 * (width + height)));
-        scanner.close();
+        inputScanner.close();
     }
 }
